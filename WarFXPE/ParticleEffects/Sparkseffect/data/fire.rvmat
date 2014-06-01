@@ -1,0 +1,32 @@
+ambient[]={0.72599989,0,0,1};
+diffuse[]={0.73700082,1.1995435e-008,0,1};
+forcedDiffuse[]={0.80599874,0,0,0};
+emmisive[]={0.65100002,0,0,1};
+specular[]={0.99999899,0,0,0};
+specularPower=49;
+nextPass="SKY_T800\data\flash-pass2.rvmat";
+PixelShaderID="Normal";
+VertexShaderID="Basic";
+class Stage0
+{
+	texture="#(argb,8,8,3)color(1,1,1,1,CO)";
+	uvSource="tex";
+	Filter="Trilinear";
+};
+class Stage1
+{
+	texture="SKY_T800\data\BodyTex.paa";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,0};
+		pos[]={0,0,0};
+	};
+	Filter="Trilinear";
+};
+
+
+
+
