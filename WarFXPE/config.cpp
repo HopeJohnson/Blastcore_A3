@@ -266,6 +266,11 @@ class cfgWeapons
 			default_mat="BCImpactDirt_50cal";
 		};
 	};
+
+	class Gatling_30mm_HE_Plane_CAS_01_F : BulletBase
+	{
+	};
+
 	class B_20mm: BulletBase
 	{
 		explosive=0;
@@ -8364,15 +8369,15 @@ class CfgCloudlets
 		particleType="Billboard";
 		timerPeriod=1;
 		lifeTime=1000;
-		moveVelocity[]={0,5,0};
+		moveVelocity[]={2,2,2};
 		rotationVelocity=50;
 		weight=10.1;
 		volume=7.9000001;
-		rubbing=0.0049999999;
+		rubbing=0.5;
 		size[]={1};
 		color[]=
 		{
-			{0.050000001,0.050000001,0.050000001,0},
+			{0.050000001,0.050000001,0.050000001,1},
 			{0.050000001,0.050000001,0.050000001,0}
 		};
 		animationSpeed[]={1};
@@ -8414,7 +8419,7 @@ class CfgCloudlets
 		particleType="Billboard";
 		timerPeriod=1;
 		lifeTime=120;
-		moveVelocity[]={0,2.5,0};
+		moveVelocity[]={2,2.5,2};
 		rotationVelocity=0;
 		weight=10;
 		volume=7.9000001;
@@ -8464,7 +8469,7 @@ class CfgCloudlets
 		particleType="Billboard";
 		timerPeriod=1;
 		lifeTime=30;
-		moveVelocity[]={0,1.5,0};
+		moveVelocity[]={1,1.5,1};
 		rotationVelocity=0;
 		weight=10;
 		volume=7.9000001;
@@ -8504,7 +8509,7 @@ class CfgCloudlets
 		particleType="Billboard";
 		timerPeriod=1;
 		lifeTime=26;
-		moveVelocity[]={0,4,0};
+		moveVelocity[]={1,4,1};
 		rotationVelocity=1;
 		weight=0.050000001;
 		volume=0.039999999;
@@ -8552,7 +8557,7 @@ class CfgCloudlets
 		particleType="Billboard";
 		timerPeriod=1;
 		lifeTime="1.1 * intensity + 16";
-		moveVelocity[]={0,3,0};
+		moveVelocity[]={2,3,2};
 		rotationVelocity=0;
 		weight=0.0504;
 		volume=0.039999999;
@@ -8597,7 +8602,7 @@ class CfgCloudlets
 		particleType="Billboard";
 		timerPeriod=1;
 		lifeTime=26;
-		moveVelocity[]={0,3,0};
+		moveVelocity[]={2,3,2};
 		rotationVelocity=0;
 		weight=0.0504;
 		volume=0.039999999;
@@ -8645,7 +8650,7 @@ class CfgCloudlets
 		particleType="Billboard";
 		timerPeriod=1;
 		lifeTime=60;
-		moveVelocity[]={0,2.5,0};
+		moveVelocity[]={1,2.5,1};
 		rotationVelocity=0;
 		weight=10;
 		volume=7.9000001;
@@ -8685,7 +8690,7 @@ class CfgCloudlets
 		particleType="Billboard";
 		timerPeriod=1;
 		lifeTime="0.2 * 1.5 + 3";
-		moveVelocity[]={0,0,0};
+		moveVelocity[]={1,1,1};
 		rotationVelocity=18;
 		weight=0.050799999;
 		volume=0.039999999;
@@ -9013,7 +9018,7 @@ class CfgCloudlets
 		particleType="Billboard";
 		timerPeriod=1;
 		lifeTime=1;
-		moveVelocity[]={0,0.5,0};
+		moveVelocity[]={1,0.5,1};
 		rotationVelocity=0;
 		weight=10;
 		volume=7.9000001;
@@ -9054,7 +9059,7 @@ class CfgCloudlets
 		particleType="Billboard";
 		timerPeriod=1;
 		lifeTime=1;
-		moveVelocity[]={0,3,0};
+		moveVelocity[]={1,3,1};
 		rotationVelocity=0;
 		weight=0.045000002;
 		volume=0.039999999;
@@ -9102,7 +9107,7 @@ class CfgCloudlets
 		particleType="Billboard";
 		timerPeriod=1;
 		lifeTime=1;
-		moveVelocity[]={0,0.5,0};
+		moveVelocity[]={1,0.5,1};
 		rotationVelocity=0;
 		weight=10;
 		volume=7.9000001;
@@ -9143,7 +9148,7 @@ class CfgCloudlets
 		particleType="Billboard";
 		timerPeriod=1;
 		lifeTime=1;
-		moveVelocity[]={0,3,0};
+		moveVelocity[]={1,3,1};
 		rotationVelocity=0;
 		weight=0.045000002;
 		volume=0.039999999;
@@ -31382,17 +31387,55 @@ class CfgCloudlets
 		weight=70;
 		volume=0.1;
 		rubbing=0;
-		size[]={0.2};
-		color[]= {{1,1,0.6,-0.25},{1,1,0.6,0}};
+		size[]={0.02};
+		color[]= {{1,0,0,1},{1,1,0.6,0}};
 		colorCoef[]={1,1,1,1};
 		animationSpeed[]={-2};
 		randomDirectionPeriod=1;
 		randomDirectionintensity=0.1;
 		onTimerScript="";
 		beforeDestroyScript="";
-		lifeTimeVar=0.5;
+		lifeTimeVar=0.05;
 		positionVar[]={0,0.5,0};
 		MoveVelocityVar[]={20,20,20};
+		rotationVelocityVar=1;
+		sizeVar=0.5;
+		colorVar[]={0.050000001,0.050000001,0.050000001,0};
+		randomDirectionPeriodVar=1;
+		randomDirectionIntensityVar=1;
+		emissiveColor[]={{10000,10000,300,0.1}};
+	};
+	class Sparks_small_02: Default
+	{
+		interval=0.001;
+		circleRadius=0;
+		circleVelocity[]={0,0,0};
+		particleShape="WarFXPE\ParticleEffects\Flare\Flare";
+		particleFSNtieth=1;
+		particleFSIndex=0;
+		particleFSFrameCount=1;
+		particleFSLoop=0;
+		angleVar=360;
+		animationName="";
+		particleType="Billboard";
+		timerPeriod=0.1;
+		lifeTime=0.040000002;
+		moveVelocity[]={1,1,1};
+		rotationVelocity=1;
+		weight=70;
+		volume=0.1;
+		rubbing=.8;
+		size[]={0.5};
+		color[]= {{1,0,0,1},{1,1,0.6,0}};
+		colorCoef[]={1,1,1,1};
+		animationSpeed[]={-2};
+		randomDirectionPeriod=1;
+		randomDirectionintensity=0.1;
+		onTimerScript="";
+		beforeDestroyScript="";
+		lifeTimeVar=0.05;
+		positionVar[]={0,0.5,0};
+		MoveVelocityVar[]={2,4,2};
 		rotationVelocityVar=1;
 		sizeVar=0.5;
 		colorVar[]={0.050000001,0.050000001,0.050000001,0};
@@ -35502,8 +35545,8 @@ class CfgCloudlets
 		size[]={0.5,1,3,4};
 		color[]=
 		{
-			{0.69999999,0.68000001,0.63999999,0.1},
-			{0.69999999,0.68000001,0.63999999,0}
+			{0.21,0.18,0.18,0.1},
+			{0.21,0.18,0.18,0}
 		};
 		animationSpeed[]={1};
 		randomDirectionPeriod=0;
@@ -35542,8 +35585,8 @@ class CfgCloudlets
 		size[]={2,4,6};
 		color[]=
 		{
-			{0.69999999,.9,0.5,0.2},
-			{0.69999999,.9,0.5,0}
+			{0.21,0.18,0.18,0.1},
+			{0.21,0.18,0.18,0}
 		};
 		animationSpeed[]={1};
 		randomDirectionPeriod=0;
@@ -35582,8 +35625,8 @@ class CfgCloudlets
 		size[]={1,2,3};
 		color[]=
 		{
-			{0.079999998,0.079999998,0.079999998,.9},
-			{0.079999998,0.079999998,0.079999998,0}
+			{0.21,0.18,0.18,0.1},
+			{0.21,0.18,0.18,0}
 		};
 		animationSpeed[]={1};
 		randomDirectionPeriod=0;
@@ -35599,6 +35642,8 @@ class CfgCloudlets
 		randomDirectionPeriodVar=0;
 		randomDirectionIntensityVar=0;
 	};
+
+
 	class 30mmAP: Default
 	{
 		interval=0.00019999999;
@@ -39956,7 +40001,7 @@ class CfgCloudlets
 		particleType="Billboard";
 		timerPeriod=1;
 		lifeTime=1;
-		moveVelocity[]={0,0.5,0};
+		moveVelocity[]={1,0.5,1};
 		rotationVelocity=0;
 		weight=10;
 		volume=7.9000001;
@@ -39964,8 +40009,8 @@ class CfgCloudlets
 		size[]={3};
 		color[]=
 		{
-			{1,1,1,0},
-			{1,1,1,-4},
+			{1,1,1,1},
+			{1,1,1,.5},
 			{1,1,1,0}
 		};
 		animationSpeed[]={0.40000001};
@@ -39974,7 +40019,7 @@ class CfgCloudlets
 		onTimerScript="";
 		beforeDestroyScript="";
 		lifeTimeVar=0.5;
-		positionVar[]={0.5,0.5,0.5};
+		positionVar[]={0.5,2,0.5};
 		moveVelocityVar[]={0,0.5,0};
 		rotationVelocityVar=0;
 		sizeVar=0.25;
@@ -39997,7 +40042,7 @@ class CfgCloudlets
 		particleType="Billboard";
 		timerPeriod=1;
 		lifeTime=1;
-		moveVelocity[]={0,0.5,0};
+		moveVelocity[]={1,0.5,1};
 		rotationVelocity=0;
 		weight=10;
 		volume=7.9000001;
@@ -40005,8 +40050,8 @@ class CfgCloudlets
 		size[]={2};
 		color[]=
 		{
-			{1,1,1,0},
-			{1,1,1,-2},
+			{1,1,1,1},
+			{1,1,1,.5},
 			{1,1,1,0}
 		};
 		animationSpeed[]={0.40000001};
@@ -40015,7 +40060,7 @@ class CfgCloudlets
 		onTimerScript="";
 		beforeDestroyScript="";
 		lifeTimeVar=0.5;
-		positionVar[]={0.5,0.5,0.5};
+		positionVar[]={0.5,2,0.5};
 		moveVelocityVar[]={0,0.5,0};
 		rotationVelocityVar=0;
 		sizeVar=0.25;
@@ -40038,7 +40083,7 @@ class CfgCloudlets
 		particleType="Billboard";
 		timerPeriod=1;
 		lifeTime=1;
-		moveVelocity[]={0,0.5,0};
+		moveVelocity[]={1,2,1};
 		rotationVelocity=0;
 		weight=10;
 		volume=7.9000001;
@@ -40047,7 +40092,7 @@ class CfgCloudlets
 		color[]=
 		{
 			{1,1,1,0},
-			{1,1,1,0},
+			{1,1,1,.5},
 			{1,1,1,0}
 		};
 		animationSpeed[]={0.5};
@@ -40958,6 +41003,7 @@ class CfgCloudlets
 		randomDirectionIntensityVar=0;
 		blockAIVisibility=1;
 	};
+
 	class Big_SmokeShellWhite_Medium_out_dark: Default
 	{
 		animationSpeedCoef=1;
@@ -43853,8 +43899,8 @@ class CfgLights
 			{1,.0,.0,1},
 			{1,1,.5,1},
 			{1,1,0,1},
-			{1,1,1,1},
-			{1,1,1,1},
+			{1,1,0,1},
+			{1,0,0,1},
 			{1,1,0,1},
 			{1,1,.5,1},
 			{1,.0,.0,0}
@@ -43865,25 +43911,27 @@ class CfgLights
 			{1,.0,.0,1},
 			{1,1,.5,1},
 			{1,1,0,1},
-			{1,1,1,1},
-			{1,1,1,1},
+			{1,1,0,1},
+			{1,0,0,1},
 			{1,1,0,1},
 			{1,1,.5,1},
 			{1,.0,.0,0}
 			
 		};
-		brightness=1;
-		size=2;
-		intensity=1;
+		brightness=500;
+		size=25;
+		intensity=250;
 		drawLight=1;
 		blinking="false";
+		flareSize=800;
+		flareMaxDistance=5000;
 		class Attenuation
 		{
 			start=0;
-			constant=5;
-			linear=5;
-			quadratic=0.5;
-			hardLimitStart=1500;
+			constant=0;
+			linear=0;
+			quadratic=0;
+			hardLimitStart=0;
 			hardLimitEnd=0;
 		};
 		position[]={0,4.5,0};
@@ -44061,16 +44109,29 @@ class CfgLights
 	};
 	class GrenadeExploLight
 	{
-		diffuse[]={255,150,50};
-		color[]={255,150,50};
-		ambient[]={2.5,1.5,0.5,0};
+		diffuse[]={255,25,25};
+		color[]=
+		{
+
+			{1,0,0,1},
+
+			
+		};
+		ambient[]=
+		{
+
+			{1,0,0,1},
+		
+			
+		};
+
 		brightness=500;
 		intensity=500;
 		size=1;
-		flareSize=15;
+		flareSize=4;
 		flareMaxDistance=5000;
 		useFlare=1;
-		drawLight=0;
+		drawLight=1;
 		blinking="true";
 		class Attenuation
 		{
@@ -53540,11 +53601,11 @@ class CfgVehicles
 			class Light1
 			{
 				simulation="light";
-				type="ObjectDestructionLight";
+				type="ExploLight";
 				position="destructionEffect1";
 				intensity=1;
 				interval=1;
-				lifeTime=3;
+				lifeTime=2;
 				enabled="distToWater";
 			};
 			class Sound
@@ -53565,15 +53626,158 @@ class CfgVehicles
 				interval=1;
 				lifeTime=3;
 			};
+
 			class Smoke1
 			{
 				simulation="particles";
-				type="ObjectDestructionSmokeSmall";
+				type="Big_SmokeShellWhite_Medium_up_dark";
 				position="destructionEffect1";
 				intensity=0.15000001;
 				interval=1;
 				lifeTime=3.5;
 			};
+	
+	class Big_SmokeShellWhite_Medium_out_dark_01
+	{
+		simulation="particles";
+		type="Big_SmokeShellWhite_Medium_out_dark"
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.1;
+	};
+	class Big_SmokeShellWhite_Medium_out_dark_02
+	{
+		simulation="particles";
+		type="Big_SmokeShellWhite_Medium_out_dark"
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.1;
+	};
+	class Big_SmokeShellWhite_Medium_out_dark_03
+	{
+		simulation="particles";
+		type="Big_SmokeShellWhite_Medium_out_dark"
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.1;
+	};	
+	class Big_SmokeShellWhite_Medium_out_dark_04
+	{
+		simulation="particles";
+		type="Big_SmokeShellWhite_Medium_out_dark"
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.1;
+	};
+
+	class Big_SmokeShellWhite_Medium_out_dark_05
+	{
+	
+		simulation="particles";
+		type="Big_SmokeShellWhite_Medium_out_dark"
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.1;
+	};	
+	class Big_SmokeShellWhite_Medium_out_dark_06
+	{
+		simulation="particles";
+		type="Big_SmokeShellWhite_Medium_out_dark"
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.1;
+	};
+
+	
+		class Big_SmokeShellWhite_Medium_up_01_d
+	{
+		simulation="particles";
+		type="Big_SmokeShellWhite_Medium_up_dark"
+		position[]={.2,.2,.2};
+		intensity=1;
+		interval=1;
+		lifeTime=0.5;
+	};
+	class Big_SmokeShellWhite_Medium_up_02_d
+	{
+		simulation="particles";
+		type="Big_SmokeShellWhite_Medium_up_dark"
+		position[]={.2,.2,.2};
+		intensity=1;
+		interval=1;
+		lifeTime=0.5;
+	};
+	class Big_SmokeShellWhite_Medium_up_03_d
+	{
+		simulation="particles";
+		type="Big_SmokeShellWhite_Medium_up_dark"
+		position[]={.2,.2,.2};
+		intensity=1;
+		interval=1;
+		lifeTime=0.5;
+	};
+	class Big_SmokeShellWhite_Medium_up_03b_d
+	{
+		simulation="particles";
+		type="Big_SmokeShellWhite_Medium_up_dark"
+		position[]={.2,.2,.2};
+		intensity=1;
+		interval=1;
+		lifeTime=0.3;
+	};
+	class Big_SmokeShellWhite_Medium_up_04_d
+	{
+		simulation="particles";
+		type="Big_SmokeShellWhite_Medium_up_dark";
+		position[]={.2,.2,.2};
+		intensity=1;
+		interval=1;
+		lifeTime=0.3;
+	};
+	class Big_SmokeShellWhite_Medium_up_06_d
+	{
+		simulation="particles";
+		type="Big_SmokeShellWhite_Medium_up_dark";
+		position[]={.2,.2,.2};
+		intensity=1;
+		interval=1;
+		lifeTime=0.3;
+	};
+
+			class FireBig1
+			{
+				simulation="particles";
+				type="ObjectDestructionFire1";
+				position="destructionEffect1";
+				intensity=0.15000001;
+				interval=1;
+				lifeTime=3;
+			};
+						class FireBig2
+			{
+				simulation="particles";
+				type="ObjectDestructionFire1";
+				position="destructionEffect1";
+				intensity=0.15000001;
+				interval=1;
+				lifeTime=3;
+			};
+						class FireBig3
+			{
+				simulation="particles";
+				type="ObjectDestructionFire1";
+				position="destructionEffect1";
+				intensity=0.15000001;
+				interval=1;
+				lifeTime=3;
+			};
+	
 			class Sparks1
 			{
 				simulation="particles";
@@ -53604,7 +53808,7 @@ class CfgVehicles
 			class Smoke1_2
 			{
 				simulation="particles";
-				type="ObjectDestructionSmoke1_2Small";
+				type="Big_SmokeShellWhite_Medium_up_dark";
 				position="destructionEffect2";
 				intensity=0.15000001;
 				interval=1;
@@ -53613,7 +53817,7 @@ class CfgVehicles
 			class Smoke2
 			{
 				simulation="particles";
-				type="ObjectDestructionSmoke2";
+				type="Big_SmokeShellWhite_Medium_up_dark";
 				position="destructionEffect2";
 				intensity=1;
 				interval=1;
@@ -55607,6 +55811,63 @@ class 25mm_Explode
 		interval=1;
 		lifeTime=0.15000001;
 	};
+		class Sparks_huge1
+	{
+		simulation="particles";
+		type="Sparks_huge";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.2;
+		qualityLevel=2;
+		smokeGenMinDist=0.1;
+		smokeGenMaxDist=3000;
+		smokeSizeCoef=5;
+		smokeIntervalCoef=0;
+	};
+	class Sparks_slow2
+	{
+		simulation="particles";
+		type="Sparks_slow";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.2;
+		qualityLevel=2;
+		smokeGenMinDist=0.1;
+		smokeGenMaxDist=3000;
+		smokeSizeCoef=5;
+		smokeIntervalCoef=0;
+	};
+			class Sparks_huge3
+	{
+		simulation="particles";
+		type="Sparks_huge";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.2;
+		qualityLevel=2;
+		smokeGenMinDist=0.1;
+		smokeGenMaxDist=3000;
+		smokeSizeCoef=5;
+		smokeIntervalCoef=0;
+	};
+	class Sparks_slow4
+	{
+		simulation="particles";
+		type="Sparks_slow";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.2;
+		qualityLevel=2;
+		smokeGenMinDist=0.1;
+		smokeGenMaxDist=3000;
+		smokeSizeCoef=5;
+		smokeIntervalCoef=0;
+	};
+
 	class 25mmFlashGlow
 	{
 		simulation="particles";
@@ -55616,8 +55877,9 @@ class 25mm_Explode
 		interval=1;
 		lifeTime=0.1;
 	};
-};
-class ExploAmmoExplosion
+
+	};
+class ExploAmmoExplosion //Jet Shit.
 {
 	class LightExp
 	{
@@ -55658,11 +55920,40 @@ class ExploAmmoExplosion
 	class 25mmSparks
 	{
 		simulation="particles";
-		type="25mmSparks";
+		type="ExpSparks";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
 		lifeTime=0.15000001;
+	};
+	
+	class Sparks_small1
+	{
+		simulation="particles";
+		type="Sparks_small_02";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.02;
+		qualityLevel=2;
+		smokeGenMinDist=0.1;
+		smokeGenMaxDist=3000;
+		smokeSizeCoef=5;
+		smokeIntervalCoef=0;
+	};
+	class Sparks_small2
+	{
+		simulation="particles";
+		type="Sparks_small_02";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.02;
+		qualityLevel=2;
+		smokeGenMinDist=0.1;
+		smokeGenMaxDist=3000;
+		smokeSizeCoef=5;
+		smokeIntervalCoef=0;
 	};
 	class 25mmFlashGlow
 	{
