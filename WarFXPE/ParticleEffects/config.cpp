@@ -8439,7 +8439,7 @@ class CfgCloudlets
 		weight=10.1;
 		volume=7.9000001;
 		rubbing=0.5;
-		size[]={1};
+		size[]={6,30};
 		color[]=
 		{
 			{0.050000001,0.050000001,0.050000001,1},
@@ -40995,7 +40995,7 @@ class CfgCloudlets
 		weight=10.1;
 		volume=7.9000001;
 		rubbing=0.3;
-		size[]={5,5,5};
+		size[]={6,45};
 		color[]=
 		{
 			{1,1,1,1},
@@ -41049,7 +41049,7 @@ class CfgCloudlets
 		weight=10.1;
 		volume=7.9000001;
 		rubbing=0.3;
-		size[]={15,15,15};
+		size[]={6,45};
 		color[]=
 		{
 			{1,1,1,1},
@@ -41102,11 +41102,11 @@ class CfgCloudlets
 		weight=10.1;
 		volume=7.9000001;
 		rubbing=0.3;
-		size[]={15,15,15};
+		size[]={6,45};
 		color[]=
 		{
-			{.14,.12,.12,1},
-			{.33,.2,.2,1},
+			{.33,.33,.33,1},
+			{.66,.66,.66,1},
 			{.8,.8,.8,0}
 		};
 		animationSpeed[]={1};
@@ -41156,7 +41156,7 @@ class CfgCloudlets
 		weight=10.1;
 		volume=7.9000001;
 		rubbing=7;
-		size[]={5,5,5};
+		size[]={6,45};
 		color[]=
 		{
 			{.14,.12,.12,1},
@@ -43977,7 +43977,7 @@ class CfgLights
 		diffuse[]={2,0.5,0};
 		color[]={255,50,25};//red	
 				
-		ambient[]={0,0,0,0};
+		ambient[]={90,45,10};//gold
 		brightness=500;
 		size=25;
 		intensity=250;
@@ -44000,7 +44000,7 @@ class CfgLights
 	{
 		diffuse[]={255,210,80};
 		color[]={255,50,25};//red
-		ambient[]={0,0,0,0};
+		ambient[]={90,45,10};//gold
 		brightness=600;
 		size=1;
 		intensity=600;
@@ -44024,7 +44024,7 @@ class CfgLights
 	{
 		diffuse[]={255,255,50};
 		color[]={255,50,25};//red
-		ambient[]={0,0,0,0};
+		ambient[]={90,45,10};//gold
 		brightness=1500;
 		size=1;
 		intensity=1500;
@@ -44230,7 +44230,7 @@ class CfgLights
 	{
 		diffuse[]={255,150,50};
 		color[]={255,50,25};//red
-		ambient[]={0,25,255};
+		ambient[]={90,45,10};//gold
 		brightness=250;
 		intensity=500;
 		size=1;
@@ -54223,125 +54223,93 @@ class CfgVehicles
 {
 	class Land;
 	class LandVehicle;
-	class car: LandVehicle
+	class car_f: LandVehicle
 	{
-		class DestructionEffects
-		{
-			class Light1
-			{
-				simulation="light";
-				type="ExploLight";
-				position="destructionEffect1";
-				intensity=1;
-				interval=1;
-				lifeTime=2;
-				enabled="distToWater";
-			};
-			class Sound
-			{
-				simulation="sound";
-				position="destructionEffect1";
-				intensity=1;
-				interval=1;
-				lifeTime=1;
-				type="Fire";
-			};
-			class Fire1
-			{
-				simulation="particles";
-				type="ObjectDestructionFire1Small";
-				position="destructionEffect1";
-				intensity=0.15000001;
-				interval=1;
-				lifeTime=3;
-			};
-
-			class Smoke1
-			{
-				simulation="particles";
-				type="Big_SmokeShellWhite_Medium_up_dark";
-				position="destructionEffect1";
-				intensity=0.15000001;
-				interval=1;
-				lifeTime=3.5;
-			};
-
-			class FireBig1
-			{
-				simulation="particles";
-				type="ObjectDestructionFire1";
-				position="destructionEffect1";
-				intensity=0.15000001;
-				interval=1;
-				lifeTime=3;
-			};
-			class FireBig2
-			{
-				simulation="particles";
-				type="ObjectDestructionFire1";
-				position="destructionEffect1";
-				intensity=0.15000001;
-				interval=1;
-				lifeTime=3;
-			};
-			class FireBig3
-			{
-				simulation="particles";
-				type="ObjectDestructionFire1";
-				position="destructionEffect1";
-				intensity=0.15000001;
-				interval=1;
-				lifeTime=3;
-			};
-	
-			class Sparks1
-			{
-				simulation="particles";
-				type="ObjectDestructionSparks";
-				position="destructionEffect1";
-				intensity=1;
-				interval=1;
-				lifeTime=0;
-			};
-			class FireSparks1
-			{
-				simulation="particles";
-				type="FireSparks";
-				position="destructionEffect2";
-				intensity=1;
-				interval=1;
-				lifeTime=2.8;
-			};
-			class Fire2
-			{
-				simulation="particles";
-				type="ObjectDestructionFire2Small";
-				position="destructionEffect2";
-				intensity=0.15000001;
-				interval=1;
-				lifeTime=3;
-			};
-			class Smoke1_2
-			{
-				simulation="particles";
-				type="Big_SmokeShellWhite_Medium_up_dark";
-				position="destructionEffect2";
-				intensity=0.15000001;
-				interval=1;
-				lifeTime=3.5;
-			};
-			class Smoke2
-			{
-				simulation="particles";
-				type="Big_SmokeShellWhite_Medium_up_dark";
-				position="destructionEffect2";
-				intensity=1;
-				interval=1;
-				lifeTime=3.2;
-			};
+		class DestructionEffects {
+		class Light1 {
+			enabled = "distToWater";
+			intensity = 0.001;
+			interval = 1;
+			lifetime = 3;
+			position = "destructionEffect1";
+			simulation = "light";
+			type = "Explolight";
+		};
+		class Sound {
+			intensity = 1;
+			interval = 1;
+			lifetime = 1;
+			position = "destructionEffect1";
+			simulation = "sound";
+			type = "Fire";
+		};
+		class Fire1 {
+			intensity = 0.15;
+			interval = 1;
+			lifetime = 3;
+			position = "destructionEffect1";
+			simulation = "particles";
+			type = "ObjectDestructionFire1Small";
+		};
+		class Refract1 {
+			intensity = 0.15;
+			interval = 1;
+			lifetime = 3;
+			position = "destructionEffect1";
+			simulation = "particles";
+			type = "ObjectDestructionRefractSmall";
+		};
+		class Smoke1 {
+			intensity = 0.15;
+			interval = 1;
+			lifetime = 3.5;
+			position = "destructionEffect1";
+			simulation = "particles";
+			type = "ObjectDestructionSmokeSmall";
+		};
+		class Sparks1 {
+			intensity = 0;
+			interval = 1;
+			lifetime = 0;
+			position = "destructionEffect1";
+			simulation = "particles";
+			type = "ObjectDestructionSparks";
+		};
+		class FireSparks1 {
+			intensity = 1;
+			interval = 1;
+			lifetime = 2.8;
+			position = "destructionEffect2";
+			simulation = "particles";
+			type = "FireSparks";
+		};
+		class Fire2 {
+			intensity = 0.15;
+			interval = 1;
+			lifetime = 3;
+			position = "destructionEffect2";
+			simulation = "particles";
+			type = "ObjectDestructionFire2Small";
+		};
+		class Smoke1_2 {
+			intensity = 0.15;
+			interval = 1;
+			lifetime = 3.5;
+			position = "destructionEffect2";
+			simulation = "particles";
+			type = "ObjectDestructionSmoke1_2Small";
+		};
+		class Smoke2 {
+			intensity = 1;
+			interval = 1;
+			lifetime = 3.2;
+			position = "destructionEffect2";
+			simulation = "particles";
+			type = "ObjectDestructionSmoke2";
 		};
 	};
-	class tank: LandVehicle
+	};
+	class tank_f: LandVehicle
 	{
 		class DestructionEffects
 		{
@@ -54383,19 +54351,19 @@ class CfgVehicles
 				interval=1;
 				lifeTime=3;
 			};
-			class SmokeBig1
-			{
-				simulation="particles";
-				type="ObjectDestructionSmoke";
-				position="destructionEffect1";
-				intensity=0.15000001;
-				interval=1;
-				lifeTime=3.5;
-			};
+//			class SmokeBig1
+//			{
+//				simulation="particles";
+//				type="ObjectDestructionSmoke";
+//				position="destructionEffect1";
+//				intensity=0.15000001;
+//				interval=1;
+//				lifeTime=3.5;
+//			};
 			class SparksBig1
 			{
 				simulation="particles";
-				type="ObjectDestructionSparks";
+				type="mk77_fire01";
 				position="destructionEffect1";
 				intensity=1;
 				interval=1;
@@ -54437,7 +54405,24 @@ class CfgVehicles
 				interval=1;
 				lifeTime=3.2;
 			};
-				
+			class SmokeBig1_3
+			{
+				simulation="particles";
+				type="ObjectDestructionSmoke1_2";
+				position="destructionEffect1";
+				intensity=0.15000001;
+				interval=1;
+				lifeTime=3.5;
+			};
+			class SmokeBig3
+			{
+				simulation="particles";
+				type="ObjectDestructionSmoke2";
+				position="destructionEffect1";
+				intensity=1;
+				interval=1;
+				lifeTime=3.2;
+			};
 		};
 	};
 	class NonStrategic;
